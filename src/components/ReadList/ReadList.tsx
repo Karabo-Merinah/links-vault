@@ -21,6 +21,7 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord}) => {
     }
   return(
    <>
+   <div className='table'>
     <table className='title-headings'>
     <thead>
     <tr>
@@ -43,7 +44,7 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord}) => {
    }
    </tbody>
     </table>
-   
+    </div>
    </>
     
      

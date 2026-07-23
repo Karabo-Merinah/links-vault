@@ -1,7 +1,7 @@
 
-import logo from '@/assets/pictures/logo.png'
+
 import { ContentContainer } from '@/components/Texts/ContentContainer'
-import add from '@/assets/pictures/add_icon.png'
+
 import {Texts} from '@/components/Texts/Texts'
 import { SearchBar } from '../SearchBar/SearchBar'
 

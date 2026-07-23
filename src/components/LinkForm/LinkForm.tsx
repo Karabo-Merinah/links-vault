@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { FormField } from "@/components/FormField/FormField"
 import { Button } from "../Button/Button"
-import save from '@/assets/pictures/save-icon.png'
+
 import type { UserInputs } from "@/App"
 
 type LinkFormProps = {
