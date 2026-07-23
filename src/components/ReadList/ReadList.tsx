@@ -2,21 +2,30 @@ import React from 'react'
 import  {type UserInputs} from '@/App'
 import {Texts} from '@/components/Texts/Texts'
 import { CardDisplay } from '@/components/CardDisplay/CardDisplay'
+import {Button} from '@/components/Button/Button'
 type List={
     list:UserInputs[],
     onDelete:(id:string)=>void,
     onEdit:(link:UserInputs)=>void
-    searchWord:string
+    searchWord:string,
+    onAddClick:()=> void
 }
 
 
-export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord}) => {
+export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddClick}) => {
 
     if(list.length === 0){
     if(searchWord.trim().length > 0){
         return <Texts variant={'h3'} className='no-links'>No links match "{searchWord}"</Texts>
       } else {
-        return <Texts variant={'h3'} className='no-links'>You currently do not have any saved links</Texts>
+        return(
+        <div className='empty-list'>
+        <Texts variant={'h3'} className='no-links'>Oh no, you currently do not have any saved links.
+          <Texts variant={'h3'}className='no-links'>Please click on the button to add one</Texts>
+        <Button variant={"filled"} text="Add a link"  onClick={onAddClick} className='add-empty'></Button>
+        </Texts>
+        </div>
+        )
       }
     }
   return(
@@ -32,15 +41,11 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord}) => {
     <th>Actions</th>
     </tr>
     </thead>
-
     <tbody>
    {
        list.map(product=>{
             return <CardDisplay key={product.id} link={product}  onDelete={onDelete} onEdit={onEdit}></CardDisplay>
-
-        })
-        
-        
+        })  
    }
    </tbody>
     </table>

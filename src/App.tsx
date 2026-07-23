@@ -38,7 +38,7 @@ const  AddLinkInfo = (title: string, url: string, description: string, tag?: str
   setList(updatedList)
   localStorage.setItem("list", JSON.stringify(updatedList))
   setShowAddForm(false)
-  showNotification("Link added!")
+  window.alert("Link added!")
 }
 const SearchLinkInfo=()=>{
   if(searchWord.length === 0){
@@ -61,7 +61,7 @@ const UpdateLinkInfo = (id: string, title: string, url: string, description: str
         title: title,
         url: url,
         description: description,
-        tag: tag,
+        tag: tag
       }
       return updatedLink
     } else {
@@ -73,9 +73,11 @@ const UpdateLinkInfo = (id: string, title: string, url: string, description: str
   localStorage.setItem("list", JSON.stringify(updatedList))
   setShowAddForm(false)
   setEdittingInputs(null)
-  showNotification("Link updated!")
+  window.alert("Link updated!")
 }
 const DeleteLinkInfo = (id: string) => {
+  if(!window.confirm("Are you sure you want to delete this?")){
+  }
   const updatedList = list.filter((link) => link.id !== id)
   setList(updatedList)
   localStorage.setItem("list", JSON.stringify(updatedList))
@@ -84,7 +86,6 @@ const DeleteLinkInfo = (id: string) => {
    const StartEdit = (link: UserInputs) => {
   setEdittingInputs(link)
   setShowAddForm(true)
-   
 }
 useEffect(() => {
   if (Notification.permission === "default") {
@@ -125,11 +126,9 @@ if (showAddForm) {
     <>
     <div id="app-container">
       <div id="scrollable">
-          
           <Navbar searchWord={searchWord} onSearchChange={setSearchWord}/>
            <AddLink onAddClick={()=> setShowAddForm(true)}/>
-          <ReadList list={searchList} onDelete={DeleteLinkInfo} onEdit={StartEdit} searchWord={searchWord}/>
-           
+          <ReadList list={searchList} onDelete={DeleteLinkInfo} onEdit={StartEdit} searchWord={searchWord} onAddClick={()=> setShowAddForm(true)}/> 
       </div>
     </div>
     {overlayContent}

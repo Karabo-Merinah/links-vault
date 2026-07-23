@@ -18,7 +18,7 @@ export const CardDisplay:React.FC<CardDisplayProps> = ({link,onDelete,onEdit}) =
       <a href={link.url} target="_blank" className='url'>{link.url}</a>
       </td>
         <td className='tag'>{link.tag}</td>
-        <td>
+        <td className='actions'>
           <div className='buttons-styling'>
           <Texts variant={'span'}>
           <Button text="Update" variant="filled" className="update-button" onClick={() => onEdit(link)} />
