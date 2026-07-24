@@ -6,7 +6,7 @@ box-sizing: border-box;
 }
 html, body {
   overscroll-behavior: none;
-  background-color: rgba(0, 0, 0, 0.159);
+
 }
 
 :root {
@@ -19,7 +19,6 @@ html, body {
  font-size:40px;
  font-weight: 700;
  color: #333;
-
 }
 
 .logo-img{
@@ -126,7 +125,7 @@ border:none;
 
 .overlay-box {
   position: relative;
-  background-color: #162633;
+  background-color: #ECECEC;
   border-radius: 12px;
   max-width: 480px;
   max-height: 85vh;
@@ -141,7 +140,6 @@ border:none;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.156);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,7 +162,7 @@ border:none;
   gap:24px;
   padding:10px;
   border:none;
-  background-color:rgb(128, 128, 128);
+  background-color:#ECECEC;
   color:rgb(20,20,20);
 }
 
@@ -176,11 +174,14 @@ border:none;
   cursor:pointer;
 }
 .submit-btn{
-  background-color: rgb(13, 2, 59);
+  background-color: #162633;
   padding-bottom:12px;
   padding-top:12px;
   width:120px;
   cursor:pointer;
+}
+.submit-btn:hover{
+  background-color: #333;
 }
 .select-tags{
   background-color: rgb(71, 66, 78);
@@ -213,14 +214,33 @@ border:none;
   justify-content: space-between;
   color:rgb(20,20,20);
 }
+.tag{
+  border-right: 1px solid #e0e0e0;
+  padding:14px 16px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.tags{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgb(20,20,20);
+  font-size: 13px;
+  font-weight: normal;
+  padding: 4px 8px;
+  border-radius: 14px;
 
+}
 .error-text {
   display: block;
   color: rgb(243, 7, 19);
   margin-top: 4px;
 }
 .no-links{
-  color:rgba(243, 7, 19);
+  color:lightgray;
   font-size:20px;
   gap:20px;
   padding-bottom: 20px;
@@ -269,6 +289,12 @@ border:none;
   border-right: 1px solid #e0e0e0;
   padding:14px 16px;
   text-align: center;
+}
+.description {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .update-button{
   margin-left:10px;
@@ -354,7 +380,7 @@ border:none;
 
 }
 .confirm-box{
-  background-color: #2b2740;
+  background-color:#162633;
   border-radius: 12px;
   max-width: 380px;
   width:90%;
@@ -480,11 +506,14 @@ border:none;
   .overlay-box{
     padding: 24px 16px;
   }
+  .description{
+    max-width: 120px;
+  }
   .title-headings th{
     font-size: 12px;
     padding: 10px 8px;
   }
-  .title, .tag{
+  .title, .tag,.description{
     font-size: 13px;
     padding: 10px 8px;
   }
@@ -511,7 +540,10 @@ border:none;
     font-size: 11px;
     padding: 8px 6px;
   }
-  .title, .tag{
+  .description{
+    max-width: 90px;
+  }
+  .title, .tag.description{
     font-size: 12px;
     padding: 8px 6px;
   }

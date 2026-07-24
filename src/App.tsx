@@ -11,7 +11,7 @@ export type UserInputs = {
   title: string
   url: string
   description: string
-  tag?: string
+  tag?: string[]
 }
 
 function App() {
@@ -40,7 +40,7 @@ useEffect(() => {
   }
 },[])
 
-const  AddLinkInfo = (title: string, url: string, description: string, tag?: string) => {
+const  AddLinkInfo = (title: string, url: string, description: string, tag?: string[]) => {
   const newLink: UserInputs = {
     id: Date.now().toString(),
     title,
@@ -63,11 +63,11 @@ const SearchLinkInfo=()=>{
     link.title.toLowerCase().includes(keyword) ||
     link.url.toLowerCase().includes(keyword) ||
     link.description.toLowerCase().includes(keyword) ||
-    (link.tag && link.tag.toLowerCase().includes(keyword))
+    (link.tag && link.tag.some((tagInput)=>tagInput.toLowerCase().includes(keyword)))
   )
 }
 
-const UpdateLinkInfo = (id: string, title: string, url: string, description: string, tag?: string) => {
+const UpdateLinkInfo = (id: string, title: string, url: string, description: string, tag?: string[]) => {
   const updatedList = list.map((link) => {
     if (link.id === id) {
       const updatedLink: UserInputs = {
@@ -100,6 +100,7 @@ const DeleteLinkInfo = (id: string) => {
   setList(updatedList)
   localStorage.setItem("list", JSON.stringify(updatedList))
   showPopUp("Link deleted!")
+  setDeleteId(null)
 }
 const cancelDelete=()=>{
   setDeleteId(null)

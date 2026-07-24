@@ -17,15 +17,14 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddCl
 
     if(list.length === 0){
     if(searchWord.trim().length > 0){
-        return <Texts variant={'h3'} className='no-links'>No links match "{searchWord}"</Texts>
+        return <Texts variant={'h3'} className='no-links'>No links match <b style={{color:"black"}}>{searchWord}</b>, try adding it since it doesn't existt</Texts>
       } else {
         return(
         <div className='empty-list'>
           <img src={illustration} alt="add link illustration" className='empty-link-illustration'></img>
-        <Texts variant={'h3'} className='no-links'>Oh no, you currently do not have any saved links.
+        <Texts variant={'h3'} className='no-links'>Oh no, you currently do not have any saved links.</Texts>
           <Texts variant={'h3'}className='no-links'>Please click on the button to add one</Texts>
         <Button variant={"filled"} text="Add a link"  onClick={onAddClick} className='add-empty'></Button>
-        </Texts>
         </div>
         )
       }

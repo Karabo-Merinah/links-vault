@@ -13,11 +13,12 @@ export const CardDisplay:React.FC<CardDisplayProps> = ({link,onDelete,onEdit}) =
   return (
     <tr className='card'>
       <td className='title'>{link.title}</td>
-      <td className='title'>{link.description}</td>
+      <td className='description' title={link.description}>{link.description}</td>
       <td className='url'>
       <a href={link.url} target="_blank" className='url'>{link.url}</a>
       </td>
-        <td className='tag'>{link.tag}</td>
+       <td className='tag'>{link.tag?.map((tag) => (<span className='tags' key={tag}>{tag}</span>))}
+        </td>
         <td className='actions'>
           <div className='buttons-styling'>
           

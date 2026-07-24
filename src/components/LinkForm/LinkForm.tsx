@@ -8,7 +8,7 @@ type LinkFormProps = {
   onSubmit: (title: string,
      url: string,
       description: string,
-       tag?: string) => void,
+       tag?: string[]) => void,
         prevInputs?:UserInputs
 
 }
@@ -53,7 +53,7 @@ const validateForm = (): boolean => {
   if (description.trim() === "") {
     setDescriptionError("Description is required")
     isValid = false
-  } else if (description.trim().length > 50) {
+  } else if (description.split("").length > 50) {
     setDescriptionError("Description must be 50 characters or less")
     isValid = false
   } else {
@@ -67,14 +67,8 @@ useEffect(()=>{
   if(prevInputs){
     setTitle(prevInputs.title)
     setDescription(prevInputs.description)
-    setUrl(prevInputs.url)
-    
-    if(prevInputs.tag){
-      setTag(prevInputs.tag)
-    }
-    else{
-      setTag("")
-    }
+    setUrl(prevInputs.url )
+    setTag(prevInputs.tag ? prevInputs.tag.join(","):"")
   }
 },[prevInputs])
 
@@ -84,7 +78,8 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
   if (!isValid) {
     return
   }
-    onSubmit(title,url,description,tag)
+    const tags=tag.split(",").map((input) => input.trim()).filter((input) => input!=="")
+    onSubmit(title,url,description,tags)
      setTitle("")
     setUrl("")
     setDescription("")
@@ -98,7 +93,7 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
     return (
   <form onSubmit={handleSubmit} className='link-form'>
  <FormField label="Title">
-  <input type='text' value={title} placeholder="PLease enter the title" onChange={(e) => setTitle(e.target.value)} className='inputs-styling'></input>
+  <input type='text' value={title} placeholder="Please enter the title" onChange={(e) => setTitle(e.target.value)} className='inputs-styling'></input>
   {titleError && <span className='error-text'>{titleError}</span>}
 </FormField>
 <FormField label="Link(URL)">
@@ -106,19 +101,12 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
   {urlError && <span className='error-text'>{urlError}</span>}
 </FormField>
 <FormField label="Description">
- <textarea value={description} onChange={(e) => setDescription(e.target.value)} className='inputs-styling description-input' rows={3}></textarea>
+ <textarea value={description} placeholder="Your description here" onChange={(e) => setDescription(e.target.value)} className='inputs-styling description-input' rows={3}></textarea>
   {descriptionError && <span className='error-text'>{descriptionError}</span>}
 </FormField>
-<FormField label="Tag">
-  <select name='tags' className='select-tags' value={tag}  onChange={(e) => setTag(e.target.value)}>
-    <option value=''></option>
-    <option value='Favourites'>Favourites</option>
-    <option value='Work'>Work</option>
-    <option value='Personal'>Personal</option>
-    <option value='School'>School</option>
-  </select>
+<FormField label="Tags">
+  <input type='text' value={tag} placeholder="e.g. Work, School" onChange={(e) => setTag(e.target.value)} className='inputs-styling'></input>
 </FormField>
-
       <div className='saving-button'>
       <Button type='submit' text="SAVE LINK" variant="filled" className='submit-btn'/>
       </div>
