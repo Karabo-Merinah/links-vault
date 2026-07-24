@@ -6,7 +6,7 @@ box-sizing: border-box;
 }
 html, body {
   overscroll-behavior: none;
-  background-color: rgba(0, 0, 0, 0.209);
+  background-color: rgba(0, 0, 0, 0.159);
 }
 
 /* Navbar styling */
@@ -18,13 +18,7 @@ html, body {
  color:#FDFDFD;
 
 }
-.navbar-cont{
-  background-color:#818A91;
-  position:sticky;
-  top:0;
-  left:0;
-  width:100%;
-}
+
 .logo-img{
   height:30px;
   width:30px;
@@ -468,7 +462,7 @@ border:none;
   .url{
     font-size: 13px;
   }
-  
+
 }
 
 @media (max-width: 320px) {
