@@ -7,9 +7,11 @@ box-sizing: border-box;
 html, body {
   overscroll-behavior: none;
   background-color: rgba(0, 0, 0, 0.159);
-
 }
 
+:root {
+  color-scheme: light;
+}
 /* Navbar styling */
 
 .logo{
@@ -369,7 +371,7 @@ border:none;
   width:110px;
   justify-content: center;
   border:1px solid #8a8a8a;
-  color: #d0d0d0;
+  color: rgb(20,20,20);
    cursor:pointer;
 }
 .cancel-button:hover{
