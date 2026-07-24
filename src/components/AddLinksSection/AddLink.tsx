@@ -1,5 +1,5 @@
 import React from 'react'
-import addIcon from '@/assets/pictures/add_icon.png'
+import addIcon from '@/assets/pictures/add.png'
 import {Texts} from '@/components/Texts/Texts'
 import {Button} from '@/components/Button/Button'
 import { ContentContainer }  from '../Texts/ContentContainer'
