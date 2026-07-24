@@ -106,7 +106,7 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
   {urlError && <span className='error-text'>{urlError}</span>}
 </FormField>
 <FormField label="Description">
-  <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} className='inputs-styling'></input>
+ <textarea value={description} onChange={(e) => setDescription(e.target.value)} className='inputs-styling description-input' rows={3}></textarea>
   {descriptionError && <span className='error-text'>{descriptionError}</span>}
 </FormField>
 <FormField label="Tag">

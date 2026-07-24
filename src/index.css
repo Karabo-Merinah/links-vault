@@ -7,15 +7,16 @@ box-sizing: border-box;
 html, body {
   overscroll-behavior: none;
   background-color: rgba(0, 0, 0, 0.159);
+
 }
 
 /* Navbar styling */
 
 .logo{
  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
- font-size:30px;
+ font-size:40px;
  font-weight: 700;
- color:#FDFDFD;
+ color: #333;
 
 }
 
@@ -50,21 +51,30 @@ background-color: #162633;
   gap:24px;
   padding:12px 24px;
   width:100%;
+ color:rgb(20,20,20);
 }
 .add-bottom-row{
   display:flex;
-  align-items: center;
-  justify-content: space-between;
-  gap:24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
   width:100%;
 }
 .add-link-text{
 font-family: "Lora", Georgia, serif;
-font-size:27px;
+font-size:20px;
 color: #333;
-flex:1;
+
 }
 
+.buttons-setup{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap:16px;
+  width:100%;
+
+}
 /* Search bar styling */
 
 .search-wrapper{
@@ -88,7 +98,7 @@ border:none;
   font-size: 14px;
   border-radius: 6px;
   border-style: hidden;
-  
+  color:rgb(20,20,20);
 }
 /* global styling for buttons*/
 .btn{
@@ -112,7 +122,7 @@ border:none;
 
 .overlay-box {
   position: relative;
-  background-color: #2b2740;
+  background-color: #162633;
   border-radius: 12px;
   max-width: 480px;
   max-height: 85vh;
@@ -150,7 +160,8 @@ border:none;
   gap:24px;
   padding:10px;
   border:none;
-  background-color: rgb(103, 98, 130);
+  background-color:rgb(128, 128, 128);
+  color:rgb(20,20,20);
 }
 
 .saving-button{
@@ -182,12 +193,21 @@ border:none;
   padding:0 10px;
   font-size: 14px;
 }
+.description-input{
+  height:auto;
+  min-height:80px;
+  padding-top:10px;
+  padding-bottom:10px;
+  resize: vertical;
+  color:rgb(20,20,20);
+}
 .form-field{
   display: flex;
   flex-direction: column;
   gap:6px;
   padding-right:20px;
   justify-content: space-between;
+  color:rgb(20,20,20);
 }
 
 .error-text {
@@ -273,12 +293,13 @@ border:none;
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   font-size: 10px;
   font-weight: 500;
-  color: #FDFDFD;
+  color:#333;
 }
 .logo-slogan{
   display:flex;
   flex-direction: column;
   gap:2px;
+
 }
 .card {
   border-bottom: 1px solid #e0e0e0;
@@ -299,10 +320,13 @@ border:none;
   text-align: center;
   justify-content: center;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
+  right:60px;
   background-color: #162633;
 }
 .empty-list{
+  display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top:20px;
@@ -506,10 +530,4 @@ border:none;
   .search-input{
     max-width:100%;
   }
-}
-.buttons-setup{
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  gap:16px;
 }
