@@ -1,5 +1,5 @@
 import React from 'react'
-import {Texts} from '@/components/Texts/Texts'
+
 import {type UserInputs} from '@/App'
 import { Button } from '../Button/Button'
 type CardDisplayProps={
@@ -20,10 +20,10 @@ export const CardDisplay:React.FC<CardDisplayProps> = ({link,onDelete,onEdit}) =
         <td className='tag'>{link.tag}</td>
         <td className='actions'>
           <div className='buttons-styling'>
-          <Texts variant={'span'}>
+          
           <Button text="Update" variant="filled" className="update-button" onClick={() => onEdit(link)} />
           <Button text="Delete" variant="outlined" className="delete-button" onClick={() => onDelete(link.id)} />
-          </Texts>
+        
           </div>
           </td>
        </tr>
