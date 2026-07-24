@@ -7,7 +7,7 @@ type NotificatioNprops={
 export const Notification:React.FC<NotificatioNprops> = ({message,show}) => {
 
      if(!show){
-       <Texts variant={'h3'}>''</Texts>
+       return null
      }
     return (
     <div className='notification-styling'>

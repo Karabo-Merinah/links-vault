@@ -3,6 +3,7 @@ import  {type UserInputs} from '@/App'
 import {Texts} from '@/components/Texts/Texts'
 import { CardDisplay } from '@/components/CardDisplay/CardDisplay'
 import {Button} from '@/components/Button/Button'
+import illustration from '@/assets/pictures/add-link-illustration.png'
 type List={
     list:UserInputs[],
     onDelete:(id:string)=>void,
@@ -20,6 +21,7 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddCl
       } else {
         return(
         <div className='empty-list'>
+          <img src={illustration} alt="add link illustration" className='empty-link-illustration'></img>
         <Texts variant={'h3'} className='no-links'>Oh no, you currently do not have any saved links.
           <Texts variant={'h3'}className='no-links'>Please click on the button to add one</Texts>
         <Button variant={"filled"} text="Add a link"  onClick={onAddClick} className='add-empty'></Button>

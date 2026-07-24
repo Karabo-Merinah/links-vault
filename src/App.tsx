@@ -1,10 +1,11 @@
-import { Navbar } from '@/components/Navbar/Navbar'
 import './App.css'
 import { useEffect, useState } from 'react'
 import {AddLink} from '@/components/AddLinksSection/AddLink'
 import {Overlay} from '@/components/Overlay/Overlay'
 import { LinkForm } from '@/components/LinkForm/LinkForm'
 import {ReadList} from '@/components/ReadList/ReadList'
+import { DeletePopUp } from '@/components/DeletePopUp/DeletePopUp'
+import { Notification } from '@/components/Notification/Notification'
 export type UserInputs = {
   id: string
   title: string
@@ -18,6 +19,19 @@ const [searchWord,setSearchWord]=useState("");
 const [showAddForm,setShowAddForm]=useState(false)
 const [list,setList]=useState<UserInputs[]>([])
 const [edittingInputs,setEdittingInputs]=useState<UserInputs|null>(null)
+
+const[notification,setNotification]=useState("")
+const[showNotification,setShowNotification]=useState(false)
+
+const[deleteId,setDeleteId]=useState<string|null>(null)
+
+const showPopUp=(message:string)=>{
+  setNotification(message)
+  setShowNotification(true)
+  setTimeout(()=>{
+    setShowNotification(false)
+  },5000)
+}
 
 useEffect(() => {
   const storedItems = localStorage.getItem("list")
@@ -38,7 +52,7 @@ const  AddLinkInfo = (title: string, url: string, description: string, tag?: str
   setList(updatedList)
   localStorage.setItem("list", JSON.stringify(updatedList))
   setShowAddForm(false)
-  window.alert("Link added!")
+  showPopUp("Link added!")
 }
 const SearchLinkInfo=()=>{
   if(searchWord.length === 0){
@@ -73,30 +87,26 @@ const UpdateLinkInfo = (id: string, title: string, url: string, description: str
   localStorage.setItem("list", JSON.stringify(updatedList))
   setShowAddForm(false)
   setEdittingInputs(null)
-  window.alert("Link updated!")
+  showPopUp("Link updated!")
 }
 const DeleteLinkInfo = (id: string) => {
-  if(!window.confirm("Are you sure you want to delete this?")){
+ setDeleteId(id)
   }
-  const updatedList = list.filter((link) => link.id !== id)
+  const confirmDelete=()=>{
+    if(!deleteId){
+      return
+  }
+  const updatedList = list.filter((link) => link.id !== deleteId)
   setList(updatedList)
   localStorage.setItem("list", JSON.stringify(updatedList))
-  showNotification("Link deleted!")
+  showPopUp("Link deleted!")
+}
+const cancelDelete=()=>{
+  setDeleteId(null)
 }
    const StartEdit = (link: UserInputs) => {
   setEdittingInputs(link)
   setShowAddForm(true)
-}
-useEffect(() => {
-  if (Notification.permission === "default") {
-    Notification.requestPermission()
-  }
-}, [])
-
-const showNotification = (message: string) => {
-  if (Notification.permission === "granted") {
-    new Notification(message)
-  }
 }
 
 let overlayContent = null
@@ -126,12 +136,20 @@ if (showAddForm) {
     <>
     <div id="app-container">
       <div id="scrollable">
-          <Navbar searchWord={searchWord} onSearchChange={setSearchWord}/>
-           <AddLink onAddClick={()=> setShowAddForm(true)}/>
+
+           <AddLink onAddClick={()=> setShowAddForm(true)}searchWord={searchWord} onSearchChange={setSearchWord}/>
           <ReadList list={searchList} onDelete={DeleteLinkInfo} onEdit={StartEdit} searchWord={searchWord} onAddClick={()=> setShowAddForm(true)}/> 
       </div>
     </div>
     {overlayContent}
+    {deleteId &&(
+      <DeletePopUp message='Are you sure you want to delete this link?'
+      onCancel={cancelDelete} onConfirm={confirmDelete} />
+
+    )
+    
+    }
+    <Notification message={notification} show={showNotification}></Notification>
   
      
     </>
