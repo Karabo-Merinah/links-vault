@@ -98,11 +98,11 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
     return (
   <form onSubmit={handleSubmit} className='link-form'>
  <FormField label="Title">
-  <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} className='inputs-styling'></input>
+  <input type='text' value={title} placeholder="PLease enter the title" onChange={(e) => setTitle(e.target.value)} className='inputs-styling'></input>
   {titleError && <span className='error-text'>{titleError}</span>}
 </FormField>
 <FormField label="Link(URL)">
-  <input type='url' value={url} onChange={(e) => setUrl(e.target.value)} className='inputs-styling'></input>
+  <input type='url' value={url} placeholder="Please enter link/url" onChange={(e) => setUrl(e.target.value)} className='inputs-styling'></input>
   {urlError && <span className='error-text'>{urlError}</span>}
 </FormField>
 <FormField label="Description">
