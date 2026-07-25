@@ -53,7 +53,7 @@ const validateForm = (): boolean => {
   if (description.trim() === "") {
     setDescriptionError("Description is required")
     isValid = false
-  } else if (description.split("").length > 50) {
+  } else if (description.split(" ").length > 50) {
     setDescriptionError("Description must be 50 characters or less")
     isValid = false
   } else {

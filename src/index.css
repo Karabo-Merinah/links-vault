@@ -12,8 +12,7 @@ html, body {
 :root {
   color-scheme: light;
 }
-/* Navbar styling */
-
+/* Add link section */
 .logo{
  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
  font-size:40px;
@@ -29,7 +28,18 @@ html, body {
   padding-top:0px;
   padding-bottom:0px;
 }
-/* Add link section styling*/
+.slogan{
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color:#333;
+}
+.logo-slogan{
+  display:flex;
+  flex-direction: column;
+  gap:2px;
+
+}
 .add-link-button{
 display:flex;
 align-items: center;
@@ -65,9 +75,7 @@ background-color: #162633;
 font-family: "Lora", Georgia, serif;
 font-size:20px;
 color: #333;
-
 }
-
 .buttons-setup{
   display:flex;
   flex-direction: row;
@@ -77,7 +85,6 @@ color: #333;
 
 }
 /* Search bar styling */
-
 .search-wrapper{
   position: relative;
   display: flex;
@@ -121,7 +128,7 @@ border:none;
   width:20px;
   height:20px;
 }
-/*Overlay-box */
+/*Overlay-box ,form and table*/
 
 .overlay-box {
   position: relative;
@@ -165,7 +172,6 @@ border:none;
   background-color:#ECECEC;
   color:rgb(20,20,20);
 }
-
 .saving-button{
   position:relative;
   padding-bottom:12px;
@@ -214,6 +220,12 @@ border:none;
   justify-content: space-between;
   color:rgb(20,20,20);
 }
+.table{
+  width:100%;
+    max-width:1100px;
+    overflow-x: auto;
+   margin:30px auto;
+}
 .tag{
   border-right: 1px solid #e0e0e0;
   padding:14px 16px;
@@ -239,14 +251,7 @@ border:none;
   color: rgb(243, 7, 19);
   margin-top: 4px;
 }
-.no-links{
-  color:lightgray;
-  font-size:20px;
-  gap:20px;
-  padding-bottom: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
+
 .url{
   text-decoration: none;
   color:blue;
@@ -313,19 +318,6 @@ border:none;
 }
 .delete-button:hover{
    background-color:rgb(243,7,19,0.1);
- 
-}
-.slogan{
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  color:#333;
-}
-.logo-slogan{
-  display:flex;
-  flex-direction: column;
-  gap:2px;
-
 }
 .card {
   border-bottom: 1px solid #e0e0e0;
@@ -344,28 +336,6 @@ border:none;
   margin-left:20px;
   cursor:pointer;
 }
-.add-empty{
-  text-align: center;
-  justify-content: center;
-  display:flex;
-  flex-direction: row;
-  right:60px;
-  background-color: #162633;
-}
-.empty-list{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top:20px;
-  padding-left:70px;
-  padding-right:70px;
-}
-.empty-link-illustration{
-  width:180px;
-  max-width: 60%;
-  height:auto;
-}
 .notification-styling{
   position:fixed;
   top:24px;
@@ -375,9 +345,8 @@ border:none;
   border-radius: 8px;
   font-size:14px;
   font-weight: bold;
-  z-index: 999;
+  z-index: 999;  /* Displays the notification at the top */
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-
 }
 .confirm-box{
   background-color:#162633;
@@ -423,12 +392,39 @@ border:none;
   border-color: #a0a0a0;
   color:#FDFDFD;
 }
-.table{
-  width:100%;
-    max-width:1100px;
-    overflow-x: auto;
-   margin:30px auto;
+
+/* Empty state*/
+.add-empty{
+  text-align: center;
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+  right:60px;
+  background-color: #162633;
 }
+.no-links{
+  color:lightgray;
+  font-size:20px;
+  gap:20px;
+  padding-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.empty-list{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top:20px;
+  padding-left:70px;
+  padding-right:70px;
+}
+.empty-link-illustration{
+  width:180px;
+  max-width: 60%;
+  height:auto;
+}
+
 @media (max-width: 1200px) {
   .search-input{
     width: 220px;
