@@ -115,7 +115,8 @@ let overlayContent = null
 if (showAddForm) {
   if (edittingInputs) {
     overlayContent = (
-      <Overlay onClose={() => { setShowAddForm(false); setEdittingInputs(null) }}>
+      <Overlay onClose={() => { setShowAddForm(false); 
+      setEdittingInputs(null) }}>
         <LinkForm
           prevInputs={edittingInputs}
           onSubmit={(title, url, description, tag) =>

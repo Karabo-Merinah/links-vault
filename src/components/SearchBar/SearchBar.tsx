@@ -9,7 +9,7 @@ export const SearchBar:React.FC<SearchbarProps> = ({value,onChange}) => {
   return (
     <div className='search-wrapper'>
     <img src={searchIcon} alt="search for link" className='search-icon'/>
-    <input type="text" className='search-input' placeholder="Search by url/tag/title" value={value}
+    <input type="text" className='search-input' placeholder="Search by url/tag/title/description" value={value}
     onChange={(e) => onChange(e.target.value)}/>
      </div>
   )
