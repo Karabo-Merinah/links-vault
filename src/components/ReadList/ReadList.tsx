@@ -17,7 +17,7 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddCl
 
     if(list.length === 0){
     if(searchWord.trim().length > 0){
-        return <Texts variant={'h3'} className='no-links'>No links match <b style={{color:"black"}}>{searchWord}</b>, try adding it since it doesn't existt</Texts>
+        return <Texts variant={'h3'} className='no-match'>No links match <b style={{color:"black"}}>{searchWord}</b>, try adding it since it doesn't existt</Texts>
       } else {
         return(
         <div className='empty-list'>

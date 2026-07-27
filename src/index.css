@@ -15,18 +15,29 @@ html, body {
 /* Add link section */
 .logo{
  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
- font-size:40px;
- font-weight: 700;
+ font-size:30px;
+ font-weight:bold;
  color: #333;
+ display:flex;
+ flex-direction: row;
+flex-wrap: nowrap;
+white-space: nowrap;
+
 }
+
 
 .logo-img{
   height:30px;
   width:30px;
   position:absolute;
+  flex-shrink: 0;
   padding-left:10px;
   padding-top:0px;
   padding-bottom:0px;
+}
+.logo-row{
+  display:flex;
+  flex-direction: column;
 }
 .slogan{
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
@@ -37,9 +48,11 @@ html, body {
 .logo-slogan{
   display:flex;
   flex-direction: column;
-  gap:2px;
-
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap:6px;
 }
+
 .add-link-button{
 display:flex;
 align-items: center;
@@ -57,19 +70,31 @@ background-color: #162633;
 }
 .add-section{
   display:flex;
-  align-items: stretch;
+  align-items: center;
  flex-direction: column;
+  justify-content: center;
   gap:24px;
-  padding:12px 24px;
+  padding:12px 0px;
   width:100%;
  color:rgb(20,20,20);
+}
+.buttons-text-wrapper{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding:50px 0px;
+  gap:40px;
+  width:100%;
+  max-width:800px;
+  margin:0 auto;
 }
 .add-bottom-row{
   display:flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 12px;
-  width:100%;
+
 }
 .add-link-text{
 font-family: "Lora", Georgia, serif;
@@ -134,7 +159,7 @@ border:none;
   position: relative;
   background-color: #ECECEC;
   border-radius: 12px;
-  max-width: 480px;
+  width: 480px;
   max-height: 85vh;
   display: flex;
   flex-direction: column;
@@ -222,8 +247,8 @@ border:none;
 }
 .table{
   width:100%;
-    max-width:1100px;
-    overflow-x: auto;
+    max-width:800px;
+  overflow-x: auto;
    margin:30px auto;
 }
 .tag{
@@ -332,7 +357,7 @@ border:none;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  gap:20px;
+  gap:10px;
   margin-left:20px;
   cursor:pointer;
 }
@@ -377,6 +402,7 @@ border:none;
 .confirm-delete-buttons{
   justify-content: center;
   display:flex;
+  gap:10px;
   flex-direction: row;
   color:#FDFDFD;
 }
@@ -409,6 +435,11 @@ border:none;
   padding-bottom: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+.no-match{
+  justify-content: center;
+  color:#333;
+  text-align: center;
 }
 .empty-list{
   display:flex;

@@ -14,8 +14,8 @@ export const DeletePopUp:React.FC<DeletePopUp> = ({message,onConfirm,onCancel}) 
         <div className='confirm-box' onClick={(e)=> e.stopPropagation()}>
             <Texts variant={'p'} className='confirm-message'>{message}</Texts>
             <div className='confirm-delete-buttons'>
-                <Button text="Cancel" variant="outlined" className='cancel-button'onClick={onCancel}></Button>
-                <Button text="Delete" variant="filled" className='confirm-delete-button' onClick={onConfirm}></Button>
+                <Button text="Cancel" variant="outlined" className='cancel-button' onClick={onCancel}></Button>
+                <Button text="Yes,Delete" variant="filled" className='confirm-delete-button' onClick={onConfirm}></Button>
             </div>
         </div>
     </div>

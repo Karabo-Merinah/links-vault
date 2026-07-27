@@ -15,23 +15,20 @@ type AddLinkProps={
 export const AddLink:React.FC<AddLinkProps> = ({onAddClick,searchWord,onSearchChange}) => {
   return (
    <ContentContainer className='add-section'>
+    <div className='buttons-text-wrapper'>
      <div className='logo-slogan'>
+      <div className='logo-row'>
             <img src={link} className='logo-img'></img>
          <Texts variant={'h1'} className='logo'>Links Vault</Texts>
+          </div>
          <Texts variant={'h3'} className='slogan'>Saving links has gotten better </Texts>
          </div>
         <div className='add-bottom-row'>
            <div className='buttons-setup'>
         <SearchBar value={searchWord} onChange={onSearchChange} />
     <Button variant={"filled"} text="Add a link" icon={addIcon} onClick={onAddClick} className='add-link-button'></Button>
- 
     </div>
-          <div className='adding-instruction'>
-    <Texts variant={'p'} className='add-link-text'>
-   Add your new link and its information so that it can be saved for later use.
-    </Texts>
     </div>
-   
     </div>
     
   </ContentContainer>

@@ -97,14 +97,14 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
   {titleError && <span className='error-text'>{titleError}</span>}
 </FormField>
 <FormField label="Link(URL)">
-  <input type='url' value={url} placeholder="Please enter link/url" onChange={(e) => setUrl(e.target.value)} className='inputs-styling'></input>
+  <input type='url' value={url} placeholder="Format:https://" onChange={(e) => setUrl(e.target.value)} className='inputs-styling'></input>
   {urlError && <span className='error-text'>{urlError}</span>}
 </FormField>
 <FormField label="Description">
  <textarea value={description} placeholder="Your description here" onChange={(e) => setDescription(e.target.value)} className='inputs-styling description-input' rows={3}></textarea>
   {descriptionError && <span className='error-text'>{descriptionError}</span>}
 </FormField>
-<FormField label="Tags">
+<FormField label="Tags(Optional)">
   <input type='text' value={tag} placeholder="e.g. Work, School" onChange={(e) => setTag(e.target.value)} className='inputs-styling'></input>
 </FormField>
       <div className='saving-button'>
