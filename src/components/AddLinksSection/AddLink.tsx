@@ -22,8 +22,9 @@ export const AddLink:React.FC<AddLinkProps> = ({onAddClick,searchWord,onSearchCh
          </div>
         <div className='add-bottom-row'>
            <div className='buttons-setup'>
+        <SearchBar value={searchWord} onChange={onSearchChange} />
     <Button variant={"filled"} text="Add a link" icon={addIcon} onClick={onAddClick} className='add-link-button'></Button>
-    <SearchBar value={searchWord} onChange={onSearchChange} />
+ 
     </div>
           <div className='adding-instruction'>
     <Texts variant={'p'} className='add-link-text'>
