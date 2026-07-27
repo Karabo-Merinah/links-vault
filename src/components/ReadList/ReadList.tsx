@@ -24,7 +24,7 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddCl
           <img src={illustration} alt="add link illustration" className='empty-link-illustration'></img>
         <Texts variant={'h3'} className='no-links'>Oh no, you currently do not have any saved links.</Texts>
           <Texts variant={'h3'}className='no-links'>Please click on the button to add one</Texts>
-        <Button variant={"filled"} text="Add a link"  onClick={onAddClick} className='add-empty'></Button>
+        <Button variant={"filled"} text="Add your first link data"  onClick={onAddClick} className='add-empty'></Button>
         </div>
         )
       }
