@@ -36,7 +36,7 @@ Project Structure
 ![project structure](./src/assets/pictures/project_structure.png)
 
 ### screenshot
-![preview] (./src/assets/pictures/preview.png)
+![preview](./src/assets/pictures/preview.png)
 ![empty state preview](./src/assets/pictures/empty_state_preview.png)
 
 
