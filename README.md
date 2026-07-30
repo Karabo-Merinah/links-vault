@@ -1,32 +1,5 @@
-# React + TypeScript + Vite
+Links Vault
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
  ## Table of contents
  #Overview
  #Features
@@ -36,16 +9,12 @@ If you are developing a production application, we recommend enabling type-aware
  #acknowledgements
 
 
-
-Links Vault
-
-
 ### Overview
 
 Links Vault is a React + TypeScript app for saving, organizing, and searching links. Add a link with a title, description, and tag, then find it again later with the search bar .Everything is stored locally in your browser.
 
 ### Features
--Add links with a title, URL, description, and an optional tag (Favourites, Work, Personal, School)
+-Add links with a title, URL, description, and an optional tag (Favourites, Work, Personal, School etc)
 -Edit and delete saved links, with a confirmation pop up before deleting
 -Search across title, URL, description, and tag
 -Persistent storage via localStorage so your links are still there when you refresh or come back later
@@ -56,10 +25,10 @@ Links Vault is a React + TypeScript app for saving, organizing, and searching li
 
 ### built -with
 Tech Stack
-React 19
+React 
 TypeScript
 Vite — build tool and dev server
-Plain CSS (no framework)
+Plain CSS 
 Browser localStorage for persistence
 Project Structure
 src/
@@ -81,9 +50,9 @@ src/
 └── App.css                 Layout  styles (scroll container and app-container)
 
 ### screenshot
-![](project_structure.png)
-![] (preview.png)
-![](empty_state_preview.png)
+![project structure](./src/assets/pictures/project_structure.png)
+![preview] (./src/assets/pictures/preview.png)
+![empty state preview](./src/assets/pictures/empty_state_preview.png)
 
 
 ### Prerequisites
@@ -101,7 +70,7 @@ bash
 npm run preview
 
 Links are stored under the list key in the browser's localStorage as a JSON array. 
-Hosted link:https://karabo-link-vault-web-app.netlify.app/
+Live demo:https://karabo-link-vault-web-app.netlify.app/
 
 ## Acknowledgments
 https://youtu.be/IQ9ZZbrp04Y?si=N7YQMGpTatvac7wV
