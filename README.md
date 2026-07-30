@@ -30,27 +30,12 @@ TypeScript
 Vite — build tool and dev server
 Plain CSS 
 Browser localStorage for persistence
+
 Project Structure
-src/
-├── components/
-│   ├── AddLinksSection/    Header: logo, slogan, add-link button, search bar
-│   ├── Button/             Reusable button (filled/outlined variants)
-│   ├── CardDisplay/        Single link row in the table
-│   ├── DeletePopUp/        Confirmation modal before deleting
-│   ├── FormField/          Label and  input wrapper for forms
-│   ├── LinkForm/           Add/edit link form with validation
-│   ├── Notification/       Toast notification banner
-│   ├── Overlay/            Modal wrapper used by the add/edit form
-│   ├── ReadList/           Renders the table of links, or the empty state
-│   ├── SearchBar/          Search input with icon
-│   └── Texts/              Text component and  max-width content container
-├── assets/                 Images and icons
-├── App.tsx                 Entry level
-├── index.css               Global styles
-└── App.css                 Layout  styles (scroll container and app-container)
+
+![project structure](./src/assets/pictures/project_structure.png)
 
 ### screenshot
-![project structure](./src/assets/pictures/project_structure.png)
 ![preview] (./src/assets/pictures/preview.png)
 ![empty state preview](./src/assets/pictures/empty_state_preview.png)
 
