@@ -40,19 +40,20 @@ Project Structure
 ![empty state preview](./src/assets/pictures/empty_state_preview.png)
 
 
-### Prerequisites
-Node.js (LTS version recommended)
-npm (comes with Node.js)
+## Installation
+## Clone the repository:
+ git clone https://github.com/your-username/links-vault.git
 
-This starts Vite's dev server (with hot reload) — open the printed local URL in your browser.
+## Navigate into the project 
 
-Build for production
-bash
-npm run build
+cd links-vault
+ 
+## Install dependencies 
+npm install 
 
-Preview the production build
-bash
-npm run preview
+## Start the development server 
+npm run dev
+
 
 Links are stored under the list key in the browser's localStorage as a JSON array. 
 Live demo:https://karabo-link-vault-web-app.netlify.app/

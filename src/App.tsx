@@ -138,7 +138,6 @@ if (showAddForm) {
     <>
     <div id="app-container">
       <div id="scrollable">
-
            <AddLink onAddClick={()=> setShowAddForm(true)}searchWord={searchWord} onSearchChange={setSearchWord}/>
           <ReadList list={searchList} onDelete={DeleteLinkInfo} onEdit={StartEdit} searchWord={searchWord} onAddClick={()=> setShowAddForm(true)}/> 
       </div>
