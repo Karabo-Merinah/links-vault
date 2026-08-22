@@ -42,7 +42,7 @@ Project Structure
 
 ## Installation
 ## Clone the repository:
- git clone https://github.com/your-username/links-vault.git
+ git clone https://github.com/Karabo-Merinah/links-vault.git
 
 ## Navigate into the project 
 
