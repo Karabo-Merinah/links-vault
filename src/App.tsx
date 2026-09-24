@@ -25,10 +25,14 @@ const[showNotification,setShowNotification]=useState(false)
 
 const[deleteId,setDeleteId]=useState<string|null>(null)
 
+let notificationTimer:number | undefined
 const showPopUp=(message:string)=>{
+  if(notificationTimer !==undefined){
+    clearTimeout(notificationTimer)
+  }
   setNotification(message)
   setShowNotification(true)
-  setTimeout(()=>{
+  notificationTimer=window.setTimeout(()=>{
     setShowNotification(false)
   },5000)
 }
@@ -151,8 +155,6 @@ if (showAddForm) {
     
     }
     <Notification message={notification} show={showNotification}></Notification>
-  
-     
     </>
   )
 }
