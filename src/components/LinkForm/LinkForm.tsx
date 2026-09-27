@@ -62,7 +62,7 @@ const validateForm = (): boolean => {
 
   return isValid
 }
-
+//Fills in the form with existing link information and run once when previous inputs changes
 useEffect(()=>{
   if(prevInputs){
     setTitle(prevInputs.title)
@@ -78,6 +78,7 @@ const handleSubmit =(e:React.FormEvent<HTMLFormElement>)=>{
   if (!isValid) {
     return
   }
+  //turns the comma separated tag input into an array by trimming white spaces and dropping empty entries .
     const tags=tag.split(",").map((input) => input.trim()).filter((input) => input!=="")
     onSubmit(title,url,description,tags)
      setTitle("")

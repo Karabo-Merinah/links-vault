@@ -13,6 +13,7 @@ export const CardDisplay:React.FC<CardDisplayProps> = ({link,onDelete,onEdit}) =
   return (
     <tr className='card'>
       <td className='title'>{link.title}</td>
+      {/* title shows the full description when hovered over as it is truncated */}
       <td className='description' title={link.description}>{link.description}</td>
       <td className='url'>
       <a href={link.url} target="_blank" className='url'>{link.url}</a>

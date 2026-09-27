@@ -27,6 +27,7 @@ const[deleteId,setDeleteId]=useState<string|null>(null)
 
 let notificationTimer:number | undefined
 const showPopUp=(message:string)=>{
+  //cancels any notifications still counting down before starting anew one
   if(notificationTimer !==undefined){
     clearTimeout(notificationTimer)
   }
@@ -37,6 +38,7 @@ const showPopUp=(message:string)=>{
   },5000)
 }
 
+//Loads a ny previously saved links from localstorage when rendering
 useEffect(() => {
   const storedItems = localStorage.getItem("list")
   if(storedItems){
@@ -58,6 +60,7 @@ const  AddLinkInfo = (title: string, url: string, description: string, tag?: str
   setShowAddForm(false)
   showPopUp("Link added!")
 }
+//Filters the list by  title,url,description or tag on the search bar
 const SearchLinkInfo=()=>{
   if(searchWord.length === 0){
     return list
@@ -93,6 +96,7 @@ const UpdateLinkInfo = (id: string, title: string, url: string, description: str
   setEdittingInputs(null)
   showPopUp("Link updated!")
 }
+//Shows confirmation dialog before deleting
 const DeleteLinkInfo = (id: string) => {
  setDeleteId(id)
   }
@@ -113,6 +117,8 @@ const cancelDelete=()=>{
   setEdittingInputs(link)
   setShowAddForm(true)
 }
+
+//Shows what is inside the overlay
 
 let overlayContent = null
 

@@ -16,10 +16,12 @@ type List={
 export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddClick}) => {
 
     if(list.length === 0){
+      //When user searches for non existing link information show this fallback
     if(searchWord.trim().length > 0){
         return <Texts variant={'h3'} className='no-match'>No links match <b style={{color:"black"}}>{searchWord}</b>, try adding it since it doesn't existt</Texts>
       } else {
         return(
+          //First user render show empty state   with button to create one link 
         <div className='empty-list'>
           <img src={illustration} alt="add link illustration" className='empty-link-illustration'></img>
         <Texts variant={'h3'} className='no-links'>Oh no, you currently do not have any saved links.</Texts>
@@ -31,6 +33,7 @@ export const ReadList:React.FC<List> = ({list,onDelete,onEdit,searchWord,onAddCl
     }
   return(
    <>
+   {/* Render the saved links as a table */}
    <div className='table'>
     <table className='title-headings'>
     <thead>
